@@ -1,0 +1,673 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\usepackage{graphicx}
+\graphicspath{ {./} }
+
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Earliest Deadline First Scheduling Algorithm}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Yigitcan Aydin}
+\IEEEauthorblockA{Electronic Engineering\\
+Hochschule Hamm-Lippstadt\\
+Lippstadt, Germany\\
+Email: yigitcan.aydin@stud.hshl.de}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+%\tableofcontents
+
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Real-time embedded systems has been increasing its usage in the 21st century and it is not showing any signs that development of real-time systems will slow down. Since embedded devices can be found in almost every field in the modern life of the people, e.g. from medical industry to gaming, from aviation to logistics, etc., as a natural result of this, they are getting more complicated and they have to serve in wide range of tasks. Therefore, a careful and detailed research have to be done on how these overwhelming and outnumbered tasks should be handled. Hence, in this paper one of the well know scheduling algorithms, which is earliest deadline first scheduling algorithm, is being discussed as well as some other must-know subjects such as the general definition of the real-time systems, an overview to aperiodic and periodic scheduling algorithms.    
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\section{Introduction}
+In order to acquire better understanding of the scheduling algorithms used in embedded systems, especially in real-time systems, first we have to be get familiar with the basic terms and concepts in real-time systems. As a starting point we begin with the definition of the real-time system. A real-time system is one in which the accuracy of system behavior is determined by not only the logical outcomes of operations, but also by the physical time in which these outputs are generated. The set of outcomes in time of a system is referred to as system behavior \cite{rts}. Real-time systems are basically categorized under three main terms such as soft, firm and hard real-time systems. \\
+
+A soft real-time task is one that makes progress after its deadline and still has some use for the system, despite decreasing efficiency \cite{hrts}. Few examples of soft real-time systems are personal computers, video games, multimedia players, web browsers, etc. When some of the tasks fail to be scheduled, it does not affect the overall system performance and these failures are not critical that they would cause no harm to the system as well as the user.\\
+
+A real-time activity is defined to be firm if delivering outcomes after the deadline is worthless to the system but not harmful \cite{hrts}. For example, video conference, voice call systems for daily life, navigation systems can be given as example for firm real-time systems. If the tasks fail to meet their deadlines, it would fail the system but not in disastrous way. When the video conference system breaks down, the connection might be reestablished and continue with the meeting without harming any other hardware components and people around.\\
+
+When generating outcomes after the deadlines, a real-time work is considered to be hard and might also have disastrous effects for the underlying system \cite{hrts}. The traffic control systems, fire alarm and fire distinguishing systems, car break systems, etc. are the few example for the hard real-time systems. If, anyhow a simple scheduling or meeting deadline for a task in a hard real-time system occurs, this would cause severe problems such as complete failure in the system along with so many severe health problems of the people whoever is close to the place in which the hard real-time system component fails.  \\
+
+Apart from above explained fundamental real-time system terms, we should also discuss about the desired requirements that real-time systems should have. Tasks have to be scheduled so that they can meet the deadline constraints. Therefore, the outputs must be accurate not just in terms of value as well as in terms of timing. As a result, the system software must provide specialized features and
+methods for time management and task execution with precise timing
+limitations and varying degrees of importance \cite{hrts}.\\
+
+Another important point for a RTS (Real-Time System) is to contain predictability in the system. In case of a task cannot be completed in time, the system must tell the user ahead of time as then alternate actions may be prepared to address the situation \cite{hrts}. \\
+
+One of the most important features of RTS is to utilize the resources such as memory, power consumption, weight, etc.,  in an efficient way as much as possible. RTS have to be designed to achieve a robust system in order for the RTS not to collapse when the system is overloaded \cite{hrts}. This feature leads us to fault-tolerance point where RTS must be designed in a way that it continues its process even if one of the hardware is not functioning anymore. As a last check point for a well-designed RTS is to have maintainability feature so that future system updates can be done.\\
+
+For a real-time system designer to satisfy the basic requirement for a real-time embedded systems, using suitable and most efficient scheduling algorithm plays a major role. In the following sections we will discuss about general real-time scheduling concepts such as aperiodic and periodic scheduling and later on our main concern which is the earliest deadline first algorithm, its utilization and some of its advantages and disadvantages. \\
+
+\section{Real-Time Scheduling}
+Real-time scheduling has been a big concern for the real-time embedded systems designers in order to make sure the task sets scheduled and executed before they miss their deadlines. Therefore, finding an optimal scheduling algorithm is one of the important points to realize especially the hard real-time systems. \\
+
+Before getting deeper in the concept of scheduling there are fundamental term to be focused on. First of all we need to understand the difference between static and dynamic scheduling. Whenever the scheduler makes scheduling choices at compile time, this process is called static scheduling. It creates a routing and scheduling table for the run-time dispatcher\cite{rts}. For the static scheduling algorithms it is not possible to change the task priorities after the tasks are scheduled and added to the ready queue. Therefor, it requires comprehensive background information of the task-set features, such as upper limit of the execution times, priority restrictions, and deadlines, in order to do this\cite{rts}.\\
+
+On the contrary, dynamic scheduling is that whenever the scheduler chooses one of the latest lineup of available tasks to schedule at run-time. Dynamic scheduling algorithms are capable of modifying task situations \cite{rts}. Dynamic scheduling algorithms provide to the CPU the possibility of rearranging the priorities of the tasks so that scheduler can change the order in the ready queue at any time in the run-time of the process.  \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{2022-05-23 14_38_27-Embedded Operating Systems - Part 2_ Process scheduling - EDN.png}
+    \caption{Preemptive priority scheduling \cite{EDN}}
+    \label{fig:Hierarchy}
+\end{figure}
+
+Another crucial concept to understand is to know the difference between non-preemptive and preemptive scheduling. The presently running task will not be easily stopped until it decides to release the provided resources by itself under non-preemptive scheduling \cite{rts}. In this mode of the scheduling, even if a higher priority task arrives, it has to wait for its own time slot assigned by the scheduler. In a circumstance where multiple small activities need to be completed, non-preemptive scheduling makes sense.\\
+
+Preemptive scheduling on the other hand, where a more critical job demands service, the presently running task could also be preempted, or halted \cite{rts}. In other words, in case of occurrence of a new task, the scheduler first suspends the task that is being executed at the arrival time of the new-coming task, and executes the new task which has higher priority regarding to the task's features (see Figure 1). \\
+
+Apart from the points explained above, we should consider aperiodic and periodic task scheduling algorithms briefly in order to understand the earliest deadline first algorithm. Having a short information about these algorithms will allow us to compare different kind of algorithms to EDF (Earliest Deadline  First) to figure out the advantages and disadvantages of EDF more easily. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{2022-05-23 12_52_14-Sescheduling algorithms for real time embedded systems.png}
+    \caption{Algorithms used in RTOS \cite{mic}}
+    \label{fig:Hierarchy}
+\end{figure}
+
+In the following subsections, we will be discussing about some of the mostly used algorithms in the Real-Time Operating Systems (RTOS) such as Round Robin (RR) Algorithm and Rate Monotonic Algorithm (RMA) along with the Earliest Deadline First (EDF) algorithm (see Figure 2).  \\
+
+\subsection{FIFO and RR Algorithms}
+FIFO (First in First out) algorithm is one of the most straightforward algorithms in terms of scheduling concerns. As its name suggests that it places the very first task which arrived before other ones into the head of the task queue (see Figure 3). Tasks cannot be preempted during the run-time. Therefore, it may cause convoy problem in the scheduling process if the arriving task influx is too much. This algorithm might be useful and advantageous in some of the cases but for the hard real-time systems it might be a problems. FIFO can be used to implement the queue data structures. LIFO (Last in First out) is the vice versa of FIFO algorithm. As the common usage of LIFO, stack data structures can be given as an example. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{2022-05-23 14_37_39-Embedded Operating Systems - Part 2_ Process scheduling - EDN.png}
+    \caption{FIFO algorithm working principle \cite{EDN}}
+    \label{fig:FIFO algorithm working principle}
+\end{figure}
+
+When we look at the RR (Round Robin) algorithm, it is the version of FIFO that we have the possibility of using preemptive scheduling mode. RR algorithm is a cyclic queue algorithm so that the tasks are being executed in a circular manner. \\
+
+\subsection{Rate Monotonic Algorithm}
+RMA (Rate Monotonic Algorithm) is an algorithm that uses the static scheduling with the preemption mode. As we discussed before it collects all the required data so that it can schedule the tasks during the compile time. The highest priority is assigned to the task that has the shortest period. Once the highest priority task's period comes, then this task is executed by preempting the already being executed task \cite{tik}. The main purpose of this algorithm is to give more CPU usage to the more frequently used tasks. \\
+
+\section{Earliest Deadline First Scheduling}
+Earliest deadline first (EDF) algorithm is one of the dynamic scheduling algorithms that begins with the scheduling by choosing the task which has the closest time interval until its deadline. Since EDF is a preemptive algorithm, whenever new tasks arrive to the queue or a task which is in execution finishes its job, the priorities of the complete queue are reassigned. Therefore, it is considered as a part of the dynamic scheduling algorithms. \\
+
+EDF is particularly used in periodic task scheduling in real-time systems. However, it can be also used for aperiodic tasks as well. \\
+
+Since it is an optimal scheduling algorithm, any other algorithms can schedule a given feasible task set if EDF is able to schedule it. Therefore, in order to determine if a given task set is schedulable or not, we must first calculate the utilization factor of the task set. Utilization factor U is the some of the fractions given by \( \frac{C_i}{T_i} \) , where C is the completion time and T is the period (in our case it  is equal to the deadline) of the individual tasks (see Equation 1).  
+
+\begin{equation}
+    U = \sum_{i=1}^n \frac{C_i}{T_i} \leq 1
+\end{equation} \cite{embart} \\
+
+Utilization factor emphasizes the CPU usage. In our equation, less than or equal to 1 means that we are able use max 100\% of the CPU power. This ratio in RMA is approximately around 70\% which is less than or equal to 0.7. \\
+
+As long as we have a feasible task set with \( U \leq 1 \) we are able to schedule it with EDF. What if we had \( U > 1 \)? In this case, EDF algorithm cannot promise us anymore that all the tasks in the task set will meet their deadlines. If such situation occurs, especially in a real-time system, that might cause hazardous problems in the system. \\
+
+EDF algorithm sometimes may cause domino effect if one of tasks misses its deadline, it may severely affect the other tasks' schedulability. If we have the such case in our system, other incoming tasks that will be executed start missing their deadlines and after some point none of them are able to meet their deadlines. This possible behavior of the EDF makes it difficult to predict the execution times and the deadlines of the tasks.\\
+
+Because of the difficulties in predicting the scheduling behavior in EDF, other scheduling algorithms, such as rate monotonic and fixed priority algorithms \cite{mic}, more frequently take place in task scheduling in real-time systems. \\
+
+In order to understand the earliest deadline first algorithm, we can take a look at the following task set and try to analyze this set whether it is schedulable and if it is, how can we schedule it properly. \\
+
+First of all, let us consider different tasks with the arrival times \( A_i = \{0, 2, 4\} \), the completion times \( C_i = \{1, 3, 2\}\) and the periods (in our case the periods are equal to the deadlines of the tasks) \( T_i = \{4, 8, 6\}\). \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{edf_table.png}
+    \caption{Earliest deadline first scheduling example table}
+    \label{fig:ex1}
+\end{figure}
+
+Now we can start by calculating the utilization factor U which gives us the prior knowledge whether we can schedule the above given set of the tasks or not. By using the equation 1;\\
+\[ U = \sum_{i=1}^n \frac{C_i}{T_i} \leq 1 ,\]\\
+\[ U = \sum_{i=1}^3 \frac{C_i}{T_i} \leq 1 ,\]\\
+\[ U = \frac{C_1}{T_1} + \frac{C_2}{T_2} + \frac{C_3}{T_3} ,\]\\
+\[ U = \frac{1}{4} + \frac{3}{8} + \frac{2}{6},\]\\
+\[ U = \frac{23}{24} = 0,958 \leq 1.\] \\
+
+Since the utilization factor is 0,958, which means that in order to schedule the given task set 95,8\% CPU power will be used, less than 1 we are able to schedule this set of the tasks. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth, height=0.48\columnwidth]{edf_sch.png}
+    \caption{Earliest deadline first scheduling example results}
+    \label{fig:ex1}
+\end{figure}
+
+If the tasks had same arrival time, the priority sequence would be \(P1 > P3 > P2\) according to their deadlines. In our case, the task 1 is arriving at t=0 and its completion time is 1. Therefore, it is scheduled between t=0 and t=1. Between t=1 and t=2, since there are no arriving tasks, processor is in the idle mode. At t=2 the task 2 is arriving and is scheduled until the task 3 arrives at t=4. Since the task 3 has higher priority than the task 2 according to EDF algorithm, at t=4 the task 2 execution is preempted and execution of the task 3 begins until t=6. From t=6 on there are no more higher priority tasks remain and scheduler returns executing the task 2 until t=7 (see Figure 5).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{2022-05-29 23_01_07-func_def.c - edf_earliest_deadline_first - Visual Studio Code.png}
+    \caption{Calculation of utilization factor in C\cite{git}}
+    \label{fig:ex2}
+\end{figure}
+
+If we wanted to schedule this set of tasks with RMA, we would not be able to do this because the required utilization factor in RMA should be less than 0.69. Since U for the given set of tasks is 0.958 which is much more greater than 0.69, RMA cannot guarantee us that it can schedule our tasks. \\ 
+
+If we assume that all the above mentioned tasks' arrival time were the same, then we could expect the following output regarding to the C++ code and its result: (see Figure 7).\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{edf_consol.png}
+    \caption{EDF result with the same arrival times\cite{git1}}
+    \label{fig:ex2}
+\end{figure}
+
+\section{Conclusion}
+Although the EDF algorithm is one of the optimal algorithms, similarly RMA, it is not preferred to be used in some of the real-time system applications. This is mainly because of the predictability problems of the earliest deadline algorithm. However, if someone wants to get a better understanding in the field of embedded systems and especially in the real-time operating systems, it is better to understand first the optimal algorithms such as earliest deadline first and rate monotonic scheduling algorithms. \\
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+
+
+
+
+% that's all folks
+\end{document}
+
+
+
+
